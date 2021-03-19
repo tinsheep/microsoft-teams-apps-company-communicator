@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
   "manifestVersion": "1.5",
-  "version": "4.0.0",
-  "id": "1c07cd26-a088-4db8-8928-ace382fa219f",
+  "version": "4.2.0",
+  "id": "54659444-6C6E-4009-B815-7A2F661020B1",
   "packageName": "com.microsoft.teams.companycommunicator.authors",
   "developer": {
     "name": "Tinsheep Enterprises",
@@ -11,20 +11,20 @@
     "termsOfUseUrl": "https://www.tinsheep.com/tou"
   },
   "icons": {
-    "color": "color.png",
+    "color": "pulse.png",
     "outline": "outline.png"
   },
   "name": {
-    "short": "Company Communicator (Authors)",
-    "full": "Company Communicator (Authors)"
+    "short": "Pulse",
+    "full": "Pulse for Providers"
   },
   "description": {
-    "short": "Broadcast messages to multiple teams and people in one go",
-    "full": "Broadcasts messages to multiple teams and individuals through channel posts and chat messages"
+    "short": "Send requests for referrals",
+    "full": "Send Requests for Referrals and create a meeting for collaboration"
   },
   "accentColor": "#64A2CC",
   "configurableTabs": [{
-    "configurationUrl": "https://ccv4mipancir2/configtab",
+    "configurationUrl": "https://myteamsdev.ngrok.io/configtab",
     "canUpdateConfiguration": true,
     "scopes": [
       "team"
@@ -36,17 +36,17 @@
       "team"
     ],
     "supportsFiles": true,
-    "isNotificationOnly": true
+    "isNotificationOnly": false
   }],
   "permissions": [
     "identity",
     "messageTeamMembers"
   ],
   "validDomains": [
-    "ccv4mipancir2.azurefd.net"
+    "myteamsdev.ngrok.io"
   ],
   "webApplicationInfo": {
-    "id": "7263b82e-0e4f-499b-a7df-354aa4b7f859",
-    "resource": "api://ccv4mipancir2.azurefd.net"
+    "id": "24dedad8-9ec2-487c-b96e-26a8307f0888",
+    "resource": "api://myteamsdev.ngrok.io"
   }
 }

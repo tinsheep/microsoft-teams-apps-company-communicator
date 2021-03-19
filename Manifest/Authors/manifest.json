@@ -24,7 +24,7 @@
   },
   "accentColor": "#64A2CC",
   "configurableTabs": [{
-    "configurationUrl": "https://ccv4mipancir2/configtab",
+    "configurationUrl": "https://ccv4mipancir2.azurefd.net/configtab",
     "canUpdateConfiguration": true,
     "scopes": [
       "team"
