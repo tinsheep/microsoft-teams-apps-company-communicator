@@ -639,14 +639,28 @@ class NewMessage extends React.Component<INewMessageProps, formState> {
         this.state.selectedRosters.forEach(x => selctedRosters.push(x.team.id));
         this.state.selectedGroups.forEach(x => selectedGroups.push(x.team.id));
 
+        // hardcode a meeting id on to the message generated from the meetings API
+        var theMeetingID = new String(" Here is our collaboration space: https://teams.microsoft.com/l/meetup-join/19%3ameeting_ODc2MjYwNzItZTMxNi00MDgyLTgzZTAtMzkwZTg3NzgwZjE0%40thread.v2/0?context=%7b%22Tid%22%3a%2240598f49-876f-403b-bf7f-a093e44e25bb%22%2c%22Oid%22%3a%22e6c35bcb-b9f1-4c1f-b867-000818b1d617%22%7d");
+        var theSummary = new String (this.state.summary);
+        var summaryWithMeetingId = theSummary.concat(theMeetingID.toString());  
+
+        // try putting the url in the button link
+        // var meetingBtnLink = new String("https://teams.microsoft.com/l/meetup-join/19%3ameeting_ODc2MjYwNzItZTMxNi00MDgyLTgzZTAtMzkwZTg3NzgwZjE0%40thread.v2/0?context=%7b%22Tid%22%3a%2240598f49-876f-403b-bf7f-a093e44e25bb%22%2c%22Oid%22%3a%22e6c35bcb-b9f1-4c1f-b867-000818b1d617%22%7d");
+
+        // try putting the chat for the meeting in the URL
+        var meetingChatBtnLink = new String("https://teams.microsoft.com/_#/conversations/19:meeting_ODc2MjYwNzItZTMxNi00MDgyLTgzZTAtMzkwZTg3NzgwZjE0@thread.v2?ctx=chat");
+
         const draftMessage: IDraftMessage = {
             id: this.state.messageId,
             title: this.state.title,
             imageLink: this.state.imageLink,
-            summary: this.state.summary,
+            // summary: this.state.summary,
+            summary: summaryWithMeetingId.toString(),
             author: this.state.author,
-            buttonTitle: this.state.btnTitle,
-            buttonLink: this.state.btnLink,
+            // buttonTitle: this.state.btnTitle,
+            buttonTitle: "Join",
+            // buttonLink: this.state.btnLink,
+            buttonLink: meetingChatBtnLink.toString(),
             teams: selectedTeams,
             rosters: selctedRosters,
             groups: selectedGroups,
